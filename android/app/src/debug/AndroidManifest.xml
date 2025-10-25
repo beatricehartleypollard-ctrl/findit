@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.findit">
+
+    <!-- Step 2: Allow internet access -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:label="findit"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <!-- ... rest of your app config ... -->
+    </application>
+</manifest>

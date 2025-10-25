@@ -1,0 +1,32 @@
+const Map<String, Map<String, String>> translations = {
+  'en': {
+    'home': 'Home',
+    'search': 'Search',
+    'profile': 'Profile',
+    'settings': 'Settings',
+    'language': 'Language',
+    'high_contrast': 'High Contrast',
+    'about_us': 'About Us',
+    'save': 'Save',
+  },
+  'fr': {
+    'home': 'Accueil',
+    'search': 'Chercher',
+    'profile': 'Profil',
+    'settings': 'Paramètres',
+    'language': 'Langue',
+    'high_contrast': 'Contraste élevé',
+    'about_us': 'À propos de nous',
+    'save': 'Sauvegarder',
+  },
+  'es': {
+    'home': 'Inicio',
+    'search': 'Buscar',
+    'profile': 'Perfil',
+    'settings': 'Configuración',
+    'language': 'Idioma',
+    'high_contrast': 'Alto contraste',
+    'about_us': 'Sobre nosotros',
+    'save': 'Guardar',
+  },
+};
