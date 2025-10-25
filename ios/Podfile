@@ -1,14 +1,16 @@
+# CocoaPods configuration for Flutter
 platform :ios, '15.5'
 
 use_frameworks!
 use_modular_headers!
 
-# Path to Flutter application
-flutter_application_path = File.expand_path('..', __dir__)
-require File.join(flutter_application_path, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')
+# This line ensures the Flutter SDK is loaded correctly in CodeMagic’s environment
+require_relative '../flutter_tools/bin/podhelper'
+
+flutter_ios_podfile_setup
 
 target 'Runner' do
-  flutter_ios_podfile_setup
+  flutter_additional_ios_build_settings(installer)
 end
 
 post_install do |installer|
@@ -20,3 +22,4 @@ post_install do |installer|
     end
   end
 end
+
