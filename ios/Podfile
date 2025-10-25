@@ -1,19 +1,20 @@
-# Set the minimum iOS deployment target
+# CocoaPods configuration for Flutter project
 platform :ios, '15.5'
 
+# Ensure frameworks are used (needed for Flutter plugins)
 use_frameworks!
 use_modular_headers!
 
-# Path to your Flutter app
-flutter_application_path = '../'
-load File.join(flutter_application_path, '.flutter-plugins-dependencies')
+# Path to Flutter application
+flutter_application_path = File.expand_path('..', __dir__)
+require File.expand_path(File.join(flutter_application_path, '.flutter', 'packages', 'flutter_tools', 'bin', 'podhelper'))
 
+# Target section defines the iOS app target
 target 'Runner' do
-  flutter_application_path = '../'
-  eval(File.read(File.join(flutter_application_path, '.flutter-plugins-dependencies')))
+  flutter_ios_podfile_setup
 end
 
-# Fix for CocoaPods 1.16 compatibility with Flutter
+# Post-install section ensures all iOS builds use iOS 15.5 or higher
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
